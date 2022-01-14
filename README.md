@@ -8,6 +8,7 @@ _Note: Some code may be redacted._
 
 **Experimental Results**
 
+<p float="left">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig1.png" width="500">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig2.png" width="500">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig3.png" width="500">
@@ -15,4 +16,4 @@ _Note: Some code may be redacted._
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-hvalue.png" width="500">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig5.png" width="500">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig6.png" width="500">
-
+</p>
