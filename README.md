@@ -7,9 +7,9 @@ Conflict-Based Search (CBS) is a well known path finding algorithm that has prov
 
 ##Experimental Results
 
-<img src="average-expanded-cbs.jpeg" width="300">
-<img src="average-expanded-icbs.jpeg" width="300">
-<img src="average-generated-cbs.jpeg" width="300">
-<img src="average-generated-icbs.jpeg" width="300">
-<img src="success-rate.jpeg" width="300">
-<img src="Optimality.jpeg" width="300">
+<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-expanded-CBS.jpeg" width="300">
+<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-expanded-ICBS.jpeg" width="300">
+<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-generated-CBS.jpeg" width="300">
+<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-generated-ICBS.jpeg" width="300">
+<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/success-rate.jpeg" width="300">
+<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/Optimality.jpeg" width="300">
