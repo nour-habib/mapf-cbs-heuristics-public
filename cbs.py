@@ -162,50 +162,30 @@ def build_mdd(path_list):
 def compare_mdd(mdd_list):
     conflicts = dict()
 
-    # print("compare_mdd")
-
-    # print("comp_mdd_list", mdd_list)
-
     for i in range(len(mdd_list) - 1):
         if mdd_list[i] == 0:
-            # print("skipped_i", i)
             continue
         for j in range(i + 1, len(mdd_list)):
             if mdd_list[j] == 0:
-                # print("skipped_j", j)
                 continue
             key_list = mdd_list[i]
             for k in range(1, len(key_list)):
                 if k in mdd_list[j]:
                     level_k_i = mdd_list[i].get(k)
                     level_k_j = mdd_list[j].get(k)
-                    # print("level_k_i", level_k_i)
-                    # print("level_k_j", level_k_j)
                     last_element = level_k_i[0][-1]
-                    # print("last_element: ", last_element)
                     for l in range(len(level_k_i)):
                         if l in range(len(level_k_j)):
-                            # print("level_k_i[l][-1]", level_k_i[l][-1])
-                            # print("level_k_j[l][-1]", level_k_j[l][-1])
                             conflict = cardinal_conflicts(level_k_i, level_k_j, i, j, k)
-                            # print("conflict_c: ", conflict)
                             if conflict is not None:
-                                # print("semi or cardinal conflicts: ", conflicts)
                                 key = list(conflict)[0]
-                                # print("key", key)
                                 if key not in conflicts:
-                                    print("here2")
-                                    print(conflicts)
-                                    # print("key", key)
                                     conflicts[key] = conflict.get(key)
                                 else:
                                     item = conflict.get(key)
-                                    # print("item: ", item)
                                     dict_list = conflicts.get(key)
-                                    # print("dict_list: ", dict_list)
                                     dict_item = {}
                                     for dict_item in dict_list:
-                                        # print("dict_item: ", dict_item)
                                         if item[0]['type'] in dict_item:
                                             agent_list = dict_item['agent']
                                             if i not in agent_list:
@@ -358,36 +338,21 @@ def build_DG(conflicts):
 
 def build_WDG(dependency_graph, conflict_graph, shortest_paths, paths):
     weighted_dg = dependency_graph + conflict_graph
-
-    print("weighted_dg", weighted_dg)
-    # print("shortest_paths", shortest_paths)
-    # print("paths: ", paths)
-
     wdg = dict()
-
-    # print("paths_colls", paths)
 
     for agent_list in weighted_dg:
         for i in range(len(agent_list) - 1):
             sum_paths = 0
             for j in range(i + 1, len(agent_list)):
-                # print("wdg_agent_list", agent_list)
                 sum_paths = len(paths[agent_list[i]]) - 1 + len(paths[agent_list[j]]) - 1
-                # print("len(paths[i])", len(paths[agent_list[i]]))
-                # print("len(paths[j])", len(paths[agent_list[j]]))
                 path_list_i = shortest_paths.get(agent_list[i])
                 path_list_j = shortest_paths.get(agent_list[j])
-                # print("path_list_i", path_list_i)
-                # print("path_list_j", path_list_j)
                 sum_shortest_paths = 0
                 if path_list_i is not None and path_list_j is not None:
                     sum_shortest_paths = len(path_list_i[0]) - 1 + len(path_list_j[0]) - 1
-                # print("sum_paths", sum_paths)
-                # print("sum_shortest_paths", sum_shortest_paths)
                 for_agents = list()
                 for_agents.append(copy.deepcopy(agent_list[i]))
                 for_agents.append(copy.deepcopy(agent_list[j]))
-                # print("for_agents: ", for_agents)
                 difference = sum_paths - sum_shortest_paths
                 # if difference == 0:
                 #     difference = 1
@@ -396,12 +361,9 @@ def build_WDG(dependency_graph, conflict_graph, shortest_paths, paths):
                     entry = {'agents': for_agents, 'weight': difference}
                     if tuple(agent_list) in wdg:
                         graph_list = copy.deepcopy(wdg.get(tuple(agent_list)))
-                        # print("graph_list", graph_list)
                         graph_list.append(copy.deepcopy(entry))
                     else:
                         wdg[tuple(agent_list)] = copy.deepcopy([entry])
-
-    #print("wdg", wdg)
 
     return wdg
 
@@ -418,12 +380,9 @@ def wdg_heuristic(wdg):
     difference = 0
 
     for key in wdg.keys():
-        # print("key", key)
         graph_list = copy.deepcopy(wdg.get(key))
-        # print("graph_list", graph_list)
         for i in range(len(graph_list)):
             agents = copy.deepcopy(graph_list[i]['agents'])
-            # print("agents", agents)
             if key[0] in agents and key[1] in agents:
                 weight = copy.deepcopy(graph_list[i]['weight'])
                 difference = weight - 1
@@ -435,33 +394,21 @@ def wdg_heuristic(wdg):
                 continue
 
         if len(key) == 3:
-            # print("len_key_true")
             for j in range(len(graph_list)):
                 agents = copy.deepcopy(graph_list[j]['agents'])
                 if key[0] in agents and key[2] in agents:
-                    # print("key: ", str(key[0]) + " " + str(key[2]))
                     weight1 = copy.deepcopy(graph_list[j]['weight'])
-                    # print("weight: ", difference)
-                    # print("weigh1: ", weight1)
                     third_vertex_a = weight1 - difference
-                    # print("third_vertex_a", third_vertex_a)
                 if key[1] in agents and key[2] in agents:
-                    # print("key: ", str(key[1])+" "+str(key[2]))
                     weight1 = copy.deepcopy(graph_list[j]['weight'])
-                    # print("weight: ", difference)
-                    # print("weigh1: ", weight1)
                     third_vertex_b = weight1 - difference
-                    # print("third_vertex_b", third_vertex_b)
             if third_vertex_a > 0:
                 values.append(third_vertex_a)
             elif third_vertex_b > 0:
                 values.append(third_vertex_b)
-            # print("val:", values)
             vertex_values.append(values)
             values = list()
-
-    # print("vertex_values", vertex_values)
-
+            
     for i in range(len(vertex_values)):
         heuristic = heuristic + sum(vertex_values[i])
 
@@ -604,115 +551,7 @@ class CBSSolver(object):
 
         while len(self.open_list) > 0:
 
-            current_node = self.pop_node()
-            print(current_node)
-            if len(current_node['collisions']) == 0:
-                current_node['cost'] = get_sum_of_cost(current_node['paths'])
-                self.print_results(current_node)
-                # print("Goal Path:")
-                # print(current_node['paths'])
-                return current_node['paths']
-
-            # for i in range(self.num_of_agents):
-            #     curr_cost = len(current_node['paths'][i]) - 1
-            #     # if current_min_cost_values[i] == 0 or curr_cost < current_min_cost_values[i]:
-            #     current_min_cost_values[i] = curr_cost
-
-            # get lowest cost paths
-            # test path list
-            # path_list = [[(0, 0), (0, 1), (0, 2), (1, 2)], [(0, 0), (1, 0), (1, 1), (1, 2)],
-            #              [(0, 0), (0, 1), (1, 1), (1, 2)]]
-
-            cardinal_conflicts = dict()
-            # once get_shortest_paths works this is where its gonna be
-            if cg or dg or wdg:
-                mdd_list = list()
-                agent_list = list()
-                agent_paths = dict()
-
-
-                for i in range(len(current_node['collisions'])):
-                    check1 = 0
-                    check2 = 0
-                    for j in range(len(agent_list)):
-                        if agent_list[j] == current_node['collisions'][i]['a1']:
-                            check1 = 1
-                        if agent_list[j] == current_node['collisions'][i]['a2']:
-                            check2 = 1
-                    if check1 == 0:
-                        agent_list.append(current_node['collisions'][i]['a1'])
-                    if check2 == 0:
-                        agent_list.append(current_node['collisions'][i]['a2'])
-
-                expanded_agent_list = list()
-
-                for i in range(self.num_of_agents):
-                    if i in agent_list:
-                        expanded_agent_list.append(1)
-                    else:
-                        expanded_agent_list.append(0)
-
-                # print("expanded_agent_list", expanded_agent_list)
-                # print("first_agent_list", agent_list)
-
-                start_time = timer.time()
-                for i in range(self.num_of_agents):
-
-                    if expanded_agent_list[i] == 0:
-                        mdd = 0
-                        mdd_list.append(mdd)
-                    else:
-                        check = 0
-                        cost = len(current_node['paths'][i]) - 1
-                        if cost == current_path_length[i]:
-#                             print(cost, current_path_length[i], i)
-#                             print("using old mdd")
-                            new_path_list = check_path_constraints(previous_agent_paths[i], current_node['constraints'], i,
-                                                                   cost)
-                            # print("old path list ", agent_paths[i])
-                            # print("new path list ", new_path_list)
-                            if new_path_list:
-                                check = 1
-
-                                new_mdd = build_mdd(new_path_list)
-                                mdd_list.append(new_mdd)
-
-                                print("done")
-                            else:
-                                # cost = cost + 1
-#                                 print(previous_agent_paths[i])
-#                                 print(new_path_list)
-#                                 print(current_node['constraints'])
-#                                 print("here")
-                                check = 0
-
-                        if check == 0:
-
-                            # print(cost)
-
-                            # if cost == current_mdd_length[i]:
-                            # check_mdd_constraints()
-                            start_time4 = timer.time()
-                            print(i, cost, current_path_length[i])
-                            path_list = get_shortest_paths_bfs(self.my_map, self.starts[i], self.goals[i], self.heuristics[i],
-                                                           i, current_node['constraints'], cost)
-
-                            end_time4 = timer.time()
-
-                            print("Time shortest paths:", end_time4 - start_time4)
-                            # print("path list for agent ", i, ":")
-                            # print(path_list)
-                            # build MDD with paths
-
-                            mdd = build_mdd(path_list)
-                            current_mdd_length[i] = len(mdd) - 1
-                            # print("mdd for agent", i, ":")
-                            # print(mdd)
-                            mdd_list.append(mdd)
-                            previous_agent_paths[i] = path_list
-                            current_path_length[i] = cost
-                            if expanded_agent_list[i] == 1:
-                                agent_paths[i] = path_list
+            #redacted
 
                 end_time = timer.time()
 
