@@ -401,7 +401,7 @@ def build_WDG(dependency_graph, conflict_graph, shortest_paths, paths):
                     else:
                         wdg[tuple(agent_list)] = copy.deepcopy([entry])
 
-    print("wdg", wdg)
+    #print("wdg", wdg)
 
     return wdg
 
@@ -665,8 +665,8 @@ class CBSSolver(object):
                         check = 0
                         cost = len(current_node['paths'][i]) - 1
                         if cost == current_path_length[i]:
-                            print(cost, current_path_length[i], i)
-                            print("using old mdd")
+#                             print(cost, current_path_length[i], i)
+#                             print("using old mdd")
                             new_path_list = check_path_constraints(previous_agent_paths[i], current_node['constraints'], i,
                                                                    cost)
                             # print("old path list ", agent_paths[i])
@@ -680,10 +680,10 @@ class CBSSolver(object):
                                 print("done")
                             else:
                                 # cost = cost + 1
-                                print(previous_agent_paths[i])
-                                print(new_path_list)
-                                print(current_node['constraints'])
-                                print("here")
+#                                 print(previous_agent_paths[i])
+#                                 print(new_path_list)
+#                                 print(current_node['constraints'])
+#                                 print("here")
                                 check = 0
 
                         if check == 0:
