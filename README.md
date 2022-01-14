@@ -8,12 +8,21 @@ This is a group project for a 4th year level course in Intelligent Systems.
 **Experimental Results**
 
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-expanded-CBS.jpeg" width="300">
+Figure 1: Average number of expanded nodes using CBS with heuristics.
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-generated-CBS.jpeg" width="300">
+Figure 2: Average number of generated nodes using CBS with heuristics.
 
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-expanded-ICBS.jpeg" width="300">
+Figure 3: Average number of expanded nodes using ICBS with heuristics.
+
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-generated-ICBS.jpeg" width="300">
+Figure 4: Average number of generated nodes using CBS with heuristics.
 
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-hvalue.png" width="300">
+Figure 5: Average h-values for CG, DG and WDG heuristic.
 
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/Optimality.jpeg" width="300">
+Figure 6: Percentage of instances with optimal cost.
+
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/success-rate.jpeg" width="300">
+Figure 7: Percentage of solved instances.
