@@ -26,3 +26,6 @@ Then, construct a Multi-Valued Decision Diagram using those paths and compute al
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig6.png" width="400">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-hvalue.png" width="400">
 </p>
+
+<hr>
+For more details about the heuristics, please refer to https://www.ijcai.org/proceedings/2019/0063.pdf.
