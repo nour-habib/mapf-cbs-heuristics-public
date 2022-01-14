@@ -8,9 +8,12 @@ This is a group project for a 4th year level course in Intelligent Systems.
 **Experimental Results**
 
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-expanded-CBS.jpeg" width="300">
-<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-expanded-ICBS.jpeg" width="300">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-generated-CBS.jpeg" width="300">
+
+<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-expanded-ICBS.jpeg" width="300">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-generated-ICBS.jpeg" width="300">
+
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-hvalue.png" width="300">
-<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/success-rate.jpeg" width="300">
+
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/Optimality.jpeg" width="300">
+<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/success-rate.jpeg" width="300">
