@@ -7,10 +7,10 @@ Conflict-Based Search (CBS) is a well known path finding algorithm that has prov
 
 ##Experimental Results
 
-![Average Expanded CBS](average-expanded-cbs.jpeg| width=300)
-![Average Expanded ICBS](average-expanded-icbs.jpeg| width=300)
-![Average Generated CBS](average-generated-cbs.jpeg| width=300)
-![Average Generated ICBS](average-generated-icbs.jpeg| width=300)
-![Success Rate](success-rate.jpeg| width=300)
+![Average Expanded CBS](average-expanded-cbs.jpeg | width=300)
+![Average Expanded ICBS](average-expanded-icbs.jpeg | width=300)
+![Average Generated CBS](average-generated-cbs.jpeg | width=300)
+![Average Generated ICBS](average-generated-icbs.jpeg | width=300)
+![Success Rate](success-rate.jpeg | width=300)
 
 ![Optimality](Optimality.jpeg | width=300)
