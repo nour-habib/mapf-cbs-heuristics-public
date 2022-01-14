@@ -7,3 +7,4 @@ Conflict-Based Search (CBS) is a well known path finding algorithm that has prov
 
 Experimental Results
 
+![Optimality](Optimality.jpeg)
