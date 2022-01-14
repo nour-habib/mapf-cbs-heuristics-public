@@ -19,8 +19,8 @@ Then, construct a Multi-Valued Decision Diagram using those paths and compute al
 <h2>Experimental Results</h2>
 
 <p float="left">
-<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig1.png" width="450">
-<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig2.png" width="450">
+<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig1.png" width="400">
+<img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig2.png" width="400">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig3.png" width="450">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig4.png" width="450">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig5.png" width="450">
