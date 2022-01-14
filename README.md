@@ -10,7 +10,7 @@ This is a group project for a 4th year level course in Intelligent Systems.
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-expanded-CBS.jpeg" width="300">
 Figure 1: Average number of expanded nodes using CBS with heuristics.
 <br />
-
+<br />
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/average-generated-CBS.jpeg" width="300">
 Figure 2: Average number of generated nodes using CBS with heuristics.
 <br />
