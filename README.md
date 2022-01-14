@@ -2,7 +2,6 @@
 <h1>MAPF: Implementation of CBS with Heuristics</h1>
 
 This is a group project for a 4th year level course in Intelligent Systems.
-_Note: Some code may be redacted._
 
 <h2>Intro</h2>
 
