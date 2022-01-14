@@ -6,7 +6,7 @@ _Note: Some code may be redacted._
 
 **Conflict-Based Search** **(CBS)** is a well known path finding algorithm that has proved to provide effective results. Current research works has provided several methods to improve its performance, including admissible heuristics. In this paper, our focus is on cardinal, semi and non-cardinal conflicts. This involves implementing **Conflict Graph (CG)**, **Dependency Graph (DG)** and **Weighted Dependency Graph (WDG**) heuristics. By testing against 8x8 maps, our results will show an increase in run-time and percentage of solved instances, and a decrease in number of nodes expanded.
 
-**Experimental Results**
+<h2>Experimental Results</h2>
 
 <p float="left">
 <img src="https://github.com/nour-habib/mapf-cbs-heuristics-public/blob/main/fig1.png" width="450">
